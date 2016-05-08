@@ -1,0 +1,30 @@
+[
+{
+    "modid": "stonerocks",
+    "name": "Stone Rocks",
+    "description": "Minecraft mod that adds stone rocks.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/Team-RTG/Stone-Rocks",
+    "updateUrl": "",
+    "authorList": [ "WhichOnesPink" ],
+    "credits": "",
+    "logoFile": "assets/stonerocks/logo.png",
+    "screenshots": [],
+    "parent": "",
+    "requiredMods": [ "Forge@[10.13.4.1558,)" ],
+    "dependencies": [
+
+    ],
+    "dependants": [],
+    "useDependencyInformation": true
+}
+]
+
+
+
+
+
+
+
+

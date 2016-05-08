@@ -1,0 +1,16 @@
+.classpath
+/.gradle
+/.settings
+/bin
+/build
+/eclipse
+/.project
+/gradlew-build.bat
+/gradlew-clean.bat
+/gradlew-cleanCache.bat
+/gradlew-eclipse.bat
+/gradlew-idea.bat
+/gradlew-jar.bat
+/gradlew-runClient.bat
+/gradlew-setupDecompWorkspace.bat
+/gradlew-setupDecompWorkspace-refresh-deps.bat
