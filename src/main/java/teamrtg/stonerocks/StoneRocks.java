@@ -1,12 +1,12 @@
 package teamrtg.stonerocks;
 
+import java.util.Random;
+
 import net.minecraftforge.common.MinecraftForge;
 import teamrtg.stonerocks.config.ConfigManager;
 import teamrtg.stonerocks.config.stonerocks.ConfigSR;
 import teamrtg.stonerocks.event.EventManager;
-import teamrtg.stonerocks.item.ItemRock;
-import teamrtg.stonerocks.item.ItemRockCobblestone;
-import teamrtg.stonerocks.item.ItemRockStone;
+import teamrtg.stonerocks.item.ItemRocks;
 import teamrtg.stonerocks.proxy.CommonProxy;
 import teamrtg.stonerocks.reference.ModInfo;
 import cpw.mods.fml.common.Mod;
@@ -20,7 +20,6 @@ import cpw.mods.fml.common.event.FMLServerAboutToStartEvent;
 import cpw.mods.fml.common.event.FMLServerStartedEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.event.FMLServerStoppingEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = ModInfo.MOD_ID, name = ModInfo.MOD_NAME, version = ModInfo.MOD_VERSION, acceptableRemoteVersions = "*")
 public class StoneRocks {
@@ -43,22 +42,18 @@ public class StoneRocks {
     public void fmlLifeCycleEvent(FMLPreInitializationEvent event) 
     {    
         instance = this;
-        
-        ItemRock.itemRockStone = new ItemRockStone();
-        ItemRock.itemRockCobblestone = new ItemRockCobblestone();
-        
-        GameRegistry.registerItem(ItemRock.itemRockStone, "Stone Rock");
-        GameRegistry.registerItem(ItemRock.itemRockCobblestone, "Cobblestone Rock");
-        
-        eventMgr = new EventManager();
-        
-        if (ConfigSR.modEnabled) {
-        	
-        	MinecraftForge.EVENT_BUS.register(eventMgr);
-        }
+        Random rand = new Random();
         
         configPath = event.getModConfigurationDirectory() + "/";
         ConfigManager.init(configPath);
+        
+        ItemRocks.init();
+
+        if (ConfigSR.modEnabled) {
+        	
+        	eventMgr = new EventManager(rand);
+        	MinecraftForge.EVENT_BUS.register(eventMgr);
+        }
     }
     
     @EventHandler

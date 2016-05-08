@@ -12,7 +12,8 @@ public class ConfigSR
 	public static boolean enableDebugging = false;
 	public static boolean modEnabled = true;
 	public static float dropChance = 1.0f;
-	public static int drops = 9;
+	public static int minDrops = 3;
+	public static int maxDrops = 5;
 	public static int stackSize = 64;
 	public static String[] blocks = new String[]{"minecraft:stone:0", "minecraft:cobblestone:0"};
 
@@ -52,13 +53,23 @@ public class ConfigSR
 		        + Configuration.NEW_LINE
 		    );
 			
-			drops = config.getInt(
-                "Drops",
+			minDrops = config.getInt(
+                "Minimum Drops",
                 "General",
-                drops,
-                0,
-                Integer.MAX_VALUE,
-                "The number of rocks that drop from a harvested stone block."
+                minDrops,
+                1,
+                64,
+                "The minimum number of rocks that drop from a harvested stone block."
+                + Configuration.NEW_LINE
+            );
+			
+			maxDrops = config.getInt(
+                "Maximum Drops",
+                "General",
+                maxDrops,
+                1,
+                64,
+                "The maximum number of rocks that drop from a harvested stone block."
                 + Configuration.NEW_LINE
             );
 			
