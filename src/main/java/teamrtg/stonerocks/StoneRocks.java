@@ -1,9 +1,12 @@
 package teamrtg.stonerocks;
 
+import java.util.Random;
+
 import net.minecraftforge.common.MinecraftForge;
 import teamrtg.stonerocks.config.ConfigManager;
 import teamrtg.stonerocks.config.stonerocks.ConfigSR;
 import teamrtg.stonerocks.event.EventManager;
+import teamrtg.stonerocks.item.ItemRocks;
 import teamrtg.stonerocks.proxy.CommonProxy;
 import teamrtg.stonerocks.reference.ModInfo;
 import cpw.mods.fml.common.Mod;
@@ -39,16 +42,18 @@ public class StoneRocks {
     public void fmlLifeCycleEvent(FMLPreInitializationEvent event) 
     {    
         instance = this;
-        
-        eventMgr = new EventManager();
-        
-        if (ConfigSR.modEnabled) {
-        	
-        	MinecraftForge.EVENT_BUS.register(eventMgr);
-        }
+        Random rand = new Random();
         
         configPath = event.getModConfigurationDirectory() + "/";
         ConfigManager.init(configPath);
+        
+        ItemRocks.init();
+
+        if (ConfigSR.modEnabled) {
+        	
+        	eventMgr = new EventManager(rand);
+        	MinecraftForge.EVENT_BUS.register(eventMgr);
+        }
     }
     
     @EventHandler
