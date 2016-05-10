@@ -1,4 +1,4 @@
-package teamrtg.stonerocks.proxy;
+package teamrtg.rocks.proxy;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;

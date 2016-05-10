@@ -1,4 +1,4 @@
-package teamrtg.stonerocks.util;
+package teamrtg.rocks.util;
 
 import cpw.mods.fml.common.Loader;
 

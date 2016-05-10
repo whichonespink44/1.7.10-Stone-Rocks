@@ -1,11 +1,11 @@
-package teamrtg.stonerocks.item;
+package teamrtg.rocks.item;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import teamrtg.stonerocks.config.stonerocks.ConfigSR;
-import teamrtg.stonerocks.reference.ModInfo;
+import teamrtg.rocks.config.rocks.ConfigRocks;
+import teamrtg.rocks.reference.ModInfo;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ItemRocks
@@ -27,7 +27,7 @@ public class ItemRocks
 	    	.setUnlocalizedName(ModInfo.MOD_ID + "_" + "rockCobblestone")
 	    	.setTextureName(ModInfo.MOD_ID + ":" + "rockCobblestone")
 	    	.setCreativeTab(CreativeTabs.tabMisc)
-	    	.setMaxStackSize(ConfigSR.stackSize)
+	    	.setMaxStackSize(ConfigRocks.stackSize)
     	;
         
         //GameRegistry.registerItem(rockStone, "rockStone");

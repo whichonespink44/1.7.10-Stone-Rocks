@@ -1,11 +1,11 @@
-package teamrtg.stonerocks.config.stonerocks;
+package teamrtg.rocks.config.rocks;
 
 import java.io.File;
 
 import net.minecraftforge.common.config.Configuration;
-import teamrtg.stonerocks.util.Logger;
+import teamrtg.rocks.util.Logger;
 
-public class ConfigSR
+public class ConfigRocks
 {
 	public static Configuration config;
 	
@@ -34,7 +34,7 @@ public class ConfigSR
             );
 			
 			modEnabled = config.getBoolean(
-	                "Enable Stone Rocks",
+	                "Enable Mod",
 	                "General",
 	                modEnabled,
 	                "If FALSE, rocks will not drop from stone blocks."

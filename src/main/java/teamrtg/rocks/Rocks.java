@@ -1,14 +1,14 @@
-package teamrtg.stonerocks;
+package teamrtg.rocks;
 
 import java.util.Random;
 
 import net.minecraftforge.common.MinecraftForge;
-import teamrtg.stonerocks.config.ConfigManager;
-import teamrtg.stonerocks.config.stonerocks.ConfigSR;
-import teamrtg.stonerocks.event.EventManager;
-import teamrtg.stonerocks.item.ItemRocks;
-import teamrtg.stonerocks.proxy.CommonProxy;
-import teamrtg.stonerocks.reference.ModInfo;
+import teamrtg.rocks.config.ConfigManager;
+import teamrtg.rocks.config.rocks.ConfigRocks;
+import teamrtg.rocks.event.EventManager;
+import teamrtg.rocks.item.ItemRocks;
+import teamrtg.rocks.proxy.CommonProxy;
+import teamrtg.rocks.reference.ModInfo;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -22,10 +22,10 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.event.FMLServerStoppingEvent;
 
 @Mod(modid = ModInfo.MOD_ID, name = ModInfo.MOD_NAME, version = ModInfo.MOD_VERSION, acceptableRemoteVersions = "*")
-public class StoneRocks {
+public class Rocks {
     
-    @Instance("stonerocks")
-    public static StoneRocks instance;
+    @Instance("rocks")
+    public static Rocks instance;
     public static String configPath;
     public static EventManager eventMgr;
     
@@ -49,7 +49,7 @@ public class StoneRocks {
         
         ItemRocks.init();
 
-        if (ConfigSR.modEnabled) {
+        if (ConfigRocks.modEnabled) {
         	
         	eventMgr = new EventManager(rand);
         	MinecraftForge.EVENT_BUS.register(eventMgr);
